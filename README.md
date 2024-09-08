@@ -54,7 +54,7 @@ Make sure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git 
+   git clone https://github.com/Rohit8BitCoder/Todo-app.git
    cd todo-app
 
  2. **Environment Variables**:
