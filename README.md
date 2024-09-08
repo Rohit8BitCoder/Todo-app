@@ -101,5 +101,12 @@ To contribute code, follow these steps:
 
 - The **API Endpoints** section lists the backend routes that the app uses.
 
-This `README.md` should provide clear guidance to anyone looking to use or contribute to your project.
+The app will now be running on:
 
+Backend: http://localhost:3000
+Frontend: http://localhost:5173
+
+## API Routes
+ - **POST /todo:** Create a new todo.
+ - **GET /todos:** Fetch all todos.
+ - **PUT /completed:** Mark a todo as complete.
