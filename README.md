@@ -1,0 +1,57 @@
+# Todo Application
+
+This is a full-stack Todo application built using **Node.js**, **Express.js**, **MongoDB**, and **React.js**. It allows users to create, update, and mark tasks as complete. The project uses **Zod** for payload validation on the server side.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Features
+
+- **Create Todos**: Users can add new todos with a title and description.
+- **View Todos**: Displays a list of todos and their current status (completed or not).
+- **Mark as Completed**: Users can mark any todo as completed.
+
+## Technologies Used
+
+### Backend
+
+- **Node.js**: JavaScript runtime for building the backend.
+- **Express.js**: Web framework for Node.js.
+- **MongoDB**: NoSQL database.
+- **Mongoose**: ODM for MongoDB.
+- **Zod**: JavaScript schema declaration and validation library.
+
+### Frontend
+
+- **React.js**: JavaScript library for building user interfaces.
+- **Fetch API**: For making API requests from the client to the backend.
+
+---
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js**: [Download and install Node.js](https://nodejs.org/)
+- **MongoDB**: [Install MongoDB](https://www.mongodb.com/try/download/community) on your machine or use MongoDB Atlas (cloud service)
+- **Git**: [Install Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone 
+   cd todo-app
