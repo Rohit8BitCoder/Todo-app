@@ -1,3 +1,4 @@
+
 # Todo Application
 
 This is a full-stack Todo application built using **Node.js**, **Express.js**, **MongoDB**, and **React.js**. It allows users to create, update, and mark tasks as complete. The project uses **Zod** for payload validation on the server side.
@@ -9,7 +10,7 @@ This is a full-stack Todo application built using **Node.js**, **Express.js**, *
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -53,5 +54,27 @@ Make sure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone 
+   git 
    cd todo-app
+
+ 2. **Environment Variables**:
+
+Create a .env file in the server directory and add the following:
+
+     ```bash
+      Copy code
+      MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todo-app
+
+Replace <username> and <password> with your MongoDB credentials.
+
+
+
+### Key Points:
+
+- The **Getting Started** section includes detailed steps for setting up the project locally, including both the backend and frontend setup.
+- The **Project Structure** section explains how the code is organized, providing insights into each file.
+- The **Contributing** section outlines the steps for anyone who wishes to contribute, making it beginner-friendly.
+- The **API Endpoints** section lists the backend routes that the app uses.
+
+This `README.md` should provide clear guidance to anyone looking to use or contribute to your project.
+
