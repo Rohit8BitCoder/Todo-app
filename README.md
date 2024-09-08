@@ -65,13 +65,40 @@ Create a .env file in the backend directory or add Mongobd string url to **db.js
 
 Replace <username> and <password> with your MongoDB credentials.
 
+# Contributing to Todo Application
+
+Thank you for your interest in contributing to the Todo Application! We welcome contributions from the community to help improve the project. Please follow the guidelines below to get started.
+
+## How to Contribute
+
+### Reporting Issues
+
+If you encounter any bugs or issues, please report them using the GitHub Issues page. Provide as much detail as possible, including:
+
+- Steps to reproduce the issue
+- Expected and actual results
+- Screenshots or logs if applicable
+
+### Suggesting Features
+
+If you have ideas for new features or improvements, please create a new issue with a clear description of the feature, why it's valuable, and how it could be implemented.
+
+### Making Contributions
+
+To contribute code, follow these steps:
+
+1. **Fork the Repository**
+
+   Click the "Fork" button at the top right of this repository to create a copy under your own GitHub account.
+
+2. **Clone Your Fork**
+
+   Clone your fork to your local machine:
+
+   ```bash
+   git clone https://github.com/Rohit8BitCoder/Todo-app.git
 
 
-### Key Points:
-
-- The **Getting Started** section includes detailed steps for setting up the project locally, including both the backend and frontend setup.
-- The **Project Structure** section explains how the code is organized, providing insights into each file.
-- The **Contributing** section outlines the steps for anyone who wishes to contribute, making it beginner-friendly.
 - The **API Endpoints** section lists the backend routes that the app uses.
 
 This `README.md` should provide clear guidance to anyone looking to use or contribute to your project.
