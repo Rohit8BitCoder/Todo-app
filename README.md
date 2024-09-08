@@ -8,7 +8,6 @@ This is a full-stack Todo application built using **Node.js**, **Express.js**, *
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 
 
