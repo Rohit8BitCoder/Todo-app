@@ -8,7 +8,7 @@ This is a full-stack Todo application built using **Node.js**, **Express.js**, *
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
+
 
 
 ---
@@ -58,10 +58,9 @@ Make sure you have the following installed:
 
  2. **Environment Variables**:
 
-Create a .env file in the server directory and add the following:
+Create a .env file in the backend directory or add Mongobd string url to **db.js** file inside backend directory and add the following:
 
-     ```bash
-      Copy code
+     
       MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todo-app
 
 Replace <username> and <password> with your MongoDB credentials.
