@@ -1,7 +1,9 @@
-import { useState } from 'react';
 
-export function CreateTodo() {
-  const [title, setTitle] = useState(''); 
+import { useState } from 'react';
+import './CreateTodo.css'; // Importing the CSS file
+
+export function CreateTodo({ setTodos }) { // Receive setTodos as a prop
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   const handleSubmit = async () => {
@@ -18,32 +20,42 @@ export function CreateTodo() {
       });
       
       const json = await response.json();
+
+      // After adding the todo, update the local state
+      setTodos(prevTodos => [
+        ...prevTodos,
+        { title, description, completed: false, _id: json._id } // Ensure you include the new todo's ID if returned
+      ]);
+
       alert('Todo added to the list');
+      // Reset input fields
+      setTitle('');
+      setDescription('');
     } catch (error) {
       console.error('Error adding todo:', error);
     }
   };
 
   return (
-    <div>
+    <div className="todo-container">
       <input 
-        id="title" 
-        style={{ padding: 10, margin: 10 }} 
+        id="title"
+        className="input-field" 
         type="text" 
-        placeholder="title" 
+        placeholder="Title" 
+        value={title} // Controlled component
         onChange={(e) => setTitle(e.target.value)} 
-      /> <br />
-
+      />
       <input 
-        id="description"
-        style={{ padding: 10, margin: 10 }} 
+        id="description" 
+        className="input-field" 
         type="text" 
-        placeholder="description" 
+        placeholder="Description" 
+        value={description} // Controlled component
         onChange={(e) => setDescription(e.target.value)} 
-      /> <br />
-
+      />
       <button 
-        style={{ padding: 10, margin: 10 }} 
+        className="submit-button" 
         onClick={handleSubmit}
       >
         Add a todo
@@ -51,4 +63,3 @@ export function CreateTodo() {
     </div>
   );
 }
-
