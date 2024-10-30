@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv').config(); // Ensure to load environment variables
 
 // MongoDB connection URI
-const uri = process.env.MONGODB_URI || 'mongodb--string-here';
+const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:rohit2002@cluster0.vus00tn.mongodb.net/Todo-app';
 
 mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
