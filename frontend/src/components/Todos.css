@@ -1,0 +1,107 @@
+odos */
+.todos-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Each individual todo item */
+.todo-item {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Todo item hover effect */
+.todo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
+.todo-title {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+/* Description styling */
+.todo-description {
+  font-size: 1.1em;
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+/* Button styling */
+.todo-button {
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Completed button style */
+.todo-button.completed {
+  background-color: #28a745;
+  cursor: not-allowed;
+}
+
+/* Button hover effect */
+.todo-button:not(.completed):hover {
+  background-color: #0056b3;
+}
+
+/* Delete button styling */
+.delete-button {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Delete button hover effect */
+.delete-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+
+/* Input field styling */
+input {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+}
+
+/* Edit button styling */
+.edit-button {
+  margin: 5px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Cancel button styling */
+.cancel-button {
+  margin: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
