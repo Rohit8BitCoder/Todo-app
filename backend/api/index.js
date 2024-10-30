@@ -6,8 +6,24 @@ const { createTodo, updateTodo } = require("../api/types.js");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://todobackend-lemon.vercel.app"  // Update origin for deployed frontend
+  origin: "https://your-frontend-url.vercel.app"
 }));
+
+const allowedOrigins = [
+  "http://localhost:5173", // Local development URL
+  "https://todo-app-u4i4.vercel.app" // Frontend production URL on Vercel
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
+
 
 // Create Todo
 app.post('/api/todo', async (req, res) => {
