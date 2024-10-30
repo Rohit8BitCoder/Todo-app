@@ -1,24 +1,23 @@
 const express = require('express');
 const cors = require('cors');
-const { Todo } = require('./db'); 
-const { createTodo, updateTodo } = require("./types.js");
+const { Todo } = require('../api/db'); // Adjust path as needed
+const { createTodo, updateTodo } = require("../api/types.js");
 
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: "http://localhost:5173"  // Update origin for deployed frontend
 }));
 
 // Create Todo
-app.post('/todo', async (req, res) => {
+app.post('/api/todo', async (req, res) => {
   const createPayload = req.body;
   const parsedPayload = createTodo.safeParse(createPayload); 
 
   if (!parsedPayload.success) {
-    res.status(411).json({
+    return res.status(411).json({
       msg: "You sent wrong inputs"
     });
-    return;
   }
 
   try {
@@ -34,7 +33,7 @@ app.post('/todo', async (req, res) => {
 });
 
 // Get all Todos
-app.get('/todos', async (req, res) => {
+app.get('/api/todos', async (req, res) => {
   try {
     const todos = await Todo.find({});
     res.json({ todos });
@@ -44,15 +43,14 @@ app.get('/todos', async (req, res) => {
 });
 
 // Mark Todo as Completed
-app.put('/completed', async (req, res) => {
+app.put('/api/completed', async (req, res) => {
   const updatePayload = req.body;
   const parsedPayload = updateTodo.safeParse(updatePayload); 
 
   if (!parsedPayload.success) {
-    res.status(411).json({
+    return res.status(411).json({
       msg: "You sent wrong inputs"
     });
-    return;
   }
 
   try {
@@ -64,12 +62,11 @@ app.put('/completed', async (req, res) => {
 });
 
 // Delete Todo
-
-app.delete('/todos/:id', async (req, res) => {
-  const { id } = req.params; // Get the ID from the request parameters
+app.delete('/api/todos/:id', async (req, res) => {
+  const { id } = req.params;
 
   try {
-    const result = await Todo.findByIdAndDelete(id); // Delete the todo by ID
+    const result = await Todo.findByIdAndDelete(id);
     if (!result) {
       return res.status(404).json({ msg: "Todo not found" });
     }
@@ -79,6 +76,5 @@ app.delete('/todos/:id', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Running on port 3000 successfully");
-});
+// Export the app for Vercel
+module.exports = app;
