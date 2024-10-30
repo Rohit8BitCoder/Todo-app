@@ -6,7 +6,7 @@ const { createTodo, updateTodo } = require("../api/types.js");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173"  // Update origin for deployed frontend
+  origin: "https://todobackend-lemon.vercel.app"  // Update origin for deployed frontend
 }));
 
 // Create Todo
