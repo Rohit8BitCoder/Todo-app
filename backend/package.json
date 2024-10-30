@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Your backend API",
-  "main": "api/index.js",  // Updated path to the main file
+  "main": "api/index.js",  
   "scripts": {
-    "start": "node api/index.js",  // Updated path for the start script
+    "start": "node api/index.js",  
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,7 +19,7 @@
     "zod": "^3.23.8"
   },
   "engines": {
-    "node": ">=14.0.0" // Optional: Specify Node.js version if needed
+    "node": ">=14.0.0" 
   }
 }
 
