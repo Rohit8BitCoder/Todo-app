@@ -1,9 +1,7 @@
-
 const express = require('express');
 const cors = require('cors');
 const { Todo } = require('./db'); 
-const { createTodo , updateTodo } = require ("./types.js")
-
+const { createTodo, updateTodo } = require("./types.js");
 
 const app = express();
 app.use(express.json());
@@ -12,7 +10,6 @@ app.use(cors({
 }));
 
 // Create Todo
-
 app.post('/todo', async (req, res) => {
   const createPayload = req.body;
   const parsedPayload = createTodo.safeParse(createPayload); 
@@ -37,7 +34,6 @@ app.post('/todo', async (req, res) => {
 });
 
 // Get all Todos
-
 app.get('/todos', async (req, res) => {
   try {
     const todos = await Todo.find({});
@@ -48,10 +44,10 @@ app.get('/todos', async (req, res) => {
 });
 
 // Mark Todo as Completed
-
 app.put('/completed', async (req, res) => {
   const updatePayload = req.body;
   const parsedPayload = updateTodo.safeParse(updatePayload); 
+
   if (!parsedPayload.success) {
     res.status(411).json({
       msg: "You sent wrong inputs"
@@ -67,7 +63,22 @@ app.put('/completed', async (req, res) => {
   }
 });
 
+// Delete Todo
+
+app.delete('/todos/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the request parameters
+
+  try {
+    const result = await Todo.findByIdAndDelete(id); // Delete the todo by ID
+    if (!result) {
+      return res.status(404).json({ msg: "Todo not found" });
+    }
+    res.json({ msg: "Todo deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ msg: "Error deleting todo", error });
+  }
+});
+
 app.listen(3000, () => {
   console.log("Running on port 3000 successfully");
 });
-
