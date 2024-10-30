@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import  { CreateTodo } from './components/CreateTodo.jsx'
-import {Todos} from './components/Todos.jsx'
+import { useState, useEffect } from 'react';
+import { CreateTodo } from './components/CreateTodo.jsx';
+import { Todos } from './components/Todos.jsx';
 
 function App() {
-
   const [todos, setTodos] = useState([]);
 
-  fetch("http://localhost:3000/todos")
-    .then(async function (res) 
-  { 
-        const json = await res.json();
-        setTodos(json.todos);
-   })
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const response = await fetch("http://localhost:3000/todos");
+      const json = await response.json();
+      setTodos(json.todos);
+    };
 
- 
- 
+    fetchTodos();
+  }, []); // Only run once on component mount
 
   return (
     <>
-    <div>
-
-        <h1>my todos</h1>
-
-               <CreateTodo />
-              <Todos todos = {todos}/>
-
-    </div> 
-  </>
-  )
+      <div>
+        <h1>My Todos</h1>
+        <CreateTodo setTodos={setTodos} /> {/* Pass setTodos here */}
+        <Todos todos={todos} setTodos={setTodos} />
+      </div>
+    </>
+  );
 }
 
-export default App
-
+export default App;
