@@ -6,7 +6,7 @@ const port =3000;
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://your-frontend-url.vercel.app"
+  origin: "https://todo-app-u4i4.vercel.app"
 }));
 
 const allowedOrigins = [
