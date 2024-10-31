@@ -18,7 +18,7 @@ export function Todos({ todos, setTodos }) {
     setTodos(updatedTodos);
 
     const todoToUpdate = updatedTodos[index];
-    await fetch(`http://localhost:3000/todos/${todoToUpdate.id}`, {
+    await fetch(`https://todo-app-eight-zeta-44.vercel.app/todos/${todoToUpdate.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export function Todos({ todos, setTodos }) {
   const handleDelete = async (index) => {
     if (window.confirm('Are you sure you want to delete this todo?')) {
       const todoToDelete = todos[index];
-      await fetch(`http://localhost:3000/todos/${todoToDelete.id}`, {
+      await fetch(`https://todo-app-eight-zeta-44.vercel.app/todos/${todoToDelete.id}`, {
         method: 'DELETE',
       });
       const updatedTodos = todos.filter((_, i) => i !== index);
@@ -48,7 +48,7 @@ export function Todos({ todos, setTodos }) {
     const updatedTodo = { ...todos[index], title: editTitle, description: editDescription };
 
     // Send PUT request to update the todo on the server
-    await fetch(`http://localhost:3000/todos/${todos[index].id}`, {
+    await fetch(`https://todo-app-eight-zeta-44.vercel.app/todos/${todos[index].id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
