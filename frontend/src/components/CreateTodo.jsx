@@ -8,7 +8,7 @@ export function CreateTodo({ setTodos }) { // Receive setTodos as a prop
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/todo", {
+      const response = await fetch("https://todo-app-eight-zeta-44.vercel.app/todo", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
