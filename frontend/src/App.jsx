@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await fetch("http://localhost:3000/todos");
+      const response = await fetch("https://todo-app-eight-zeta-44.vercel.app/todos");
       const json = await response.json();
       setTodos(json.todos);
     };
