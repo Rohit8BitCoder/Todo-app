@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { Todo } = require('./api/db'); // Adjust path as needed
 const { createTodo, updateTodo } = require("./api/types.js");
-
+const port =3000;
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -92,5 +92,6 @@ app.delete('/api/todos/:id', async (req, res) => {
   }
 });
 
+app.listen(port, () => console.log("running on port ${port}"));
 // Export the app for Vercel
 module.exports = app;
