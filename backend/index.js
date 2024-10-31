@@ -26,7 +26,7 @@ app.use(cors({
 
 
 // Create Todo
-app.post('/api/todo', async (req, res) => {
+app.post('/todo', async (req, res) => {
   const createPayload = req.body;
   const parsedPayload = createTodo.safeParse(createPayload); 
 
@@ -49,7 +49,7 @@ app.post('/api/todo', async (req, res) => {
 });
 
 // Get all Todos
-app.get('/api/todos', async (req, res) => {
+app.get('/todos', async (req, res) => {
   try {
     const todos = await Todo.find({});
     res.json({ todos });
@@ -59,7 +59,7 @@ app.get('/api/todos', async (req, res) => {
 });
 
 // Mark Todo as Completed
-app.put('/api/completed', async (req, res) => {
+app.put('/completed', async (req, res) => {
   const updatePayload = req.body;
   const parsedPayload = updateTodo.safeParse(updatePayload); 
 
@@ -78,7 +78,7 @@ app.put('/api/completed', async (req, res) => {
 });
 
 // Delete Todo
-app.delete('/api/todos/:id', async (req, res) => {
+app.delete('/todos/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
