@@ -24,6 +24,11 @@ app.use(cors({
   }
 }));
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Todo API!');
+});
+
+
 
 // Create Todo
 app.post('/todo', async (req, res) => {
