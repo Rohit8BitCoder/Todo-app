@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const { Todo } = require('./api/db'); // Adjust path as needed
-const { createTodo, updateTodo } = require("./api/types.js");
+const { Todo } = require('./db.js'); // Adjust path as needed
+const { createTodo, updateTodo } = require("./types.js");
 const port =3000;
 const app = express();
 app.use(express.json());
