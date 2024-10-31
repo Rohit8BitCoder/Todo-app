@@ -10,7 +10,8 @@ app.use(cors({
 }));
 
 const allowedOrigins = [
-  "http://localhost:5173", // Local development URL  "https://todo-app-65nyreact.vercel.app"// Frontend production URL on Vercel
+  "http://localhost:5173", // Local development URL
+  "https://todo-app-65nyreact.vercel.app" // Frontend production URL on Vercel
 ];
 
 app.use(cors({
